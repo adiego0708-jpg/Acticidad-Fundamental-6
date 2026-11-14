@@ -143,3 +143,67 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* ======================================= */
+/* ESTILOS PARA LOS DESPLEGABLES DE INFORMACIÓN */
+/* ======================================= */
+.info-extra {
+    margin: 25px auto 10px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Estilo para los fondos oscuros (Google, Daltoaura) */
+.fondo-azul-oscuro .info-extra, 
+.fondo-azul-marino .info-extra {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 5px solid #f39c12; /* Borde Naranja */
+    color: #ecf0f1;
+}
+
+/* Estilo para los fondos claros (Microsoft, Softtek) */
+.fondo-blanco .info-extra, 
+.fondo-gris .info-extra {
+    background-color: #f8f9fa;
+    border-left: 5px solid #3498db; /* Borde Azul */
+    color: #2c3e50;
+}
+
+.info-extra summary {
+    font-size: 1.05em;
+    font-weight: bold;
+    padding: 15px 20px;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+.fondo-blanco .info-extra summary, 
+.fondo-gris .info-extra summary {
+    color: #3498db;
+}
+
+.fondo-azul-oscuro .info-extra summary, 
+.fondo-azul-marino .info-extra summary {
+    color: #f39c12;
+}
+
+.info-extra summary::-webkit-details-marker {
+    display: none;
+}
+
+.info-extra summary::after {
+    content: '▼';
+    float: right;
+}
+
+.info-extra[open] summary::after {
+    content: '▲';
+}
+
+.info-extra .contenido-desplegable {
+    padding: 0 20px 20px 20px;
+}
