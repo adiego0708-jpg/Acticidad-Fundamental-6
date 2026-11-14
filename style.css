@@ -207,3 +207,29 @@ button:hover {
 .info-extra .contenido-desplegable {
     padding: 0 20px 20px 20px;
 }
+
+/* ======================================= */
+/* BOTÓN VOLVER AL INICIO                  */
+/* ======================================= */
+.contenedor-volver {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff; 
+}
+
+#btnVolverArriba {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+#btnVolverArriba:hover {
+    background-color: #2ecc71;
+}

@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
     
+    // ==========================================
+    // 1. DESPLAZAMIENTO SUAVE (Menú de navegación)
+    // ==========================================
     const enlacesMenu = document.querySelectorAll("nav ul li a");
     
     enlacesMenu.forEach(enlace => {
         enlace.addEventListener("click", function(evento) {
-            evento.preventDefault(); // Evita el salto brusco normal de HTML
-            
-            // Busca la sección a la que apunta el enlace (ej. #google)
+            evento.preventDefault(); 
             const idSeccion = this.getAttribute("href");
             const seccionDestino = document.querySelector(idSeccion);
             
-            // Si la sección existe, desliza la pantalla suavemente hacia ella
             if (seccionDestino) {
                 seccionDestino.scrollIntoView({
                     behavior: "smooth"
@@ -18,5 +18,39 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    // ==========================================
+    // 2. EFECTO ACORDEÓN (Desplegables)
+    // ==========================================
+    const detalles = document.querySelectorAll("details.info-extra");
+    
+    detalles.forEach((detalle) => {
+        detalle.addEventListener("toggle", function() {
+            if (detalle.open) {
+                detalles.forEach((otroDetalle) => {
+                    if (otroDetalle !== detalle && otroDetalle.open) {
+                        otroDetalle.open = false; 
+                    }
+                });
+            }
+        });
+    });
+
+    // ==========================================
+    // 3. BOTÓN DE VOLVER AL INICIO Y ALERTA
+    // ==========================================
+    const btnVolver = document.getElementById("btnVolverArriba");
+    
+    if(btnVolver) {
+        btnVolver.addEventListener("click", function() {
+            alert("¡Gracias por visitar nuestra página!");
+            
+            // Sube la pantalla suavemente
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
 });
